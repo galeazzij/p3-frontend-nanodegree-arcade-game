@@ -44,18 +44,39 @@ Player.prototype.render = function(x,y) {
 
 Player.prototype.handleInput = function(keys) {
     switch(keys){
+
         case 'left':
-            this.x = this.x - 83;
+        if(this.x>100){
+            this.x = this.x - 100;
             break;
+        }else{
+            break;
+        };
+
         case 'right':
-            this.x = this.x + 83;
+        if(this.x<405){
+            this.x = this.x + 100;
             break;
+        } else{
+            break;
+        };
+
         case 'up':
-            this.y = this.y - 83;
+        if(this.y>70){
+            this.y = this.y - 101;
             break;
+        }else{
+            break;
+        };
+
         case 'down':
-            this.y = this.y + 83;
+        if(this.y< 350){
+            this.y = this.y + 101;
             break;
+        }else{
+            break;
+        };
+
     }
 
 };
@@ -66,7 +87,7 @@ Player.prototype.handleInput = function(keys) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var allEnemies = [new Enemy(83,83)];
-var player = new Player(205,375);
+var player = new Player(205,380);
 
 
 
