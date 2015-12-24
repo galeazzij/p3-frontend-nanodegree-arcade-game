@@ -20,7 +20,6 @@ Enemy.prototype.update = function(dt) {
     if(this.x >= 505) {
         allEnemies.splice();
         this.x = enemyXLocation();
-        //bugGenerator();
     };
 };
 
@@ -41,6 +40,10 @@ var Player = function(x,y) {
 
 Player.prototype.update = function(dt) {
 
+};
+
+Player.prototype.reset = function() {
+    player = new Player();
 };
 
 Player.prototype.render = function(x,y) {
@@ -110,6 +113,14 @@ function bugGenerator() {
 bugGenerator();
 
 var player = new Player(205,380);
+
+Player.prototype.checkCollisions = function() {
+    for(var i = 0; i <= allEnemies.length; i++) {
+        if (allEnemies[i].x === (player.x + 30) && allEnemies[i].y === (player.y = 30)){
+            player.reset();
+        };
+    };
+};
 
 
 
