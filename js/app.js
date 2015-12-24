@@ -55,7 +55,7 @@ Player.prototype.handleInput = function(keys) {
 
         case 'left':
         if(this.x>100){
-            this.x = this.x - 100;
+            this.x = this.x - 101;
             break;
         }else{
             break;
@@ -63,7 +63,7 @@ Player.prototype.handleInput = function(keys) {
 
         case 'right':
         if(this.x<405){
-            this.x = this.x + 100;
+            this.x = this.x + 101;
             break;
         } else{
             break;
@@ -71,7 +71,7 @@ Player.prototype.handleInput = function(keys) {
 
         case 'up':
         if(this.y>70){
-            this.y = this.y - 101;
+            this.y = this.y - 83;
             break;
         }else{
             break;
@@ -79,7 +79,7 @@ Player.prototype.handleInput = function(keys) {
 
         case 'down':
         if(this.y< 350){
-            this.y = this.y + 101;
+            this.y = this.y + 83;
             break;
         }else{
             break;
@@ -112,7 +112,7 @@ function bugGenerator() {
 };
 bugGenerator();
 
-var player = new Player(205,380);
+var player = new Player(200,380);
 
 Player.prototype.checkCollisions = function() {
     for(var i = 0; i <= allEnemies.length; i++) {
