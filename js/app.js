@@ -16,7 +16,12 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    this.x = this.x + 100 * dt;
+    this.x += (Math.floor((Math.random() * (200 -75)) + 75) * dt);
+    if(this.x >= 505) {
+        allEnemies.splice();
+        this.x = enemyXLocation();
+        //bugGenerator();
+    };
 };
 
 // Draw the enemy on the screen, required method for game
@@ -86,7 +91,24 @@ Player.prototype.handleInput = function(keys) {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-var allEnemies = [new Enemy(83,83)];
+var allEnemies = [];
+
+//Create randomized y start location for enemy
+var enemyXLocation = function() {
+    return ((Math.random() * (-400 - (-5))) + -5);
+};
+
+//Create the bugs
+var enemyRow = [60, 145, 230];
+
+function bugGenerator() {
+    for(var i = 0; allEnemies.length <=2; i++) {
+        var bug = new Enemy(enemyXLocation(), enemyRow[i]);
+        allEnemies.push(bug);
+    }
+};
+bugGenerator();
+
 var player = new Player(205,380);
 
 
