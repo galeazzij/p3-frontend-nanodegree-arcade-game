@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function(x,y) {
+var Enemy = function(x,y,width,height) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -8,6 +8,8 @@ var Enemy = function(x,y) {
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
+    this.width = 50;
+    this.height = 50;
 };
 
 // Update the enemy's position, required method for game
@@ -32,10 +34,12 @@ Enemy.prototype.render = function(x,y) {
 // This class requires an update(), render() and
 // a handleInput() method.
 
-var Player = function(x,y) {
+var Player = function(x,y,width,height) {
     this.sprite = 'images/char-boy.png';
     this.x = x;
     this.y = y;
+    this.width = 50;
+    this.height = 50;
 };
 
 Player.prototype.update = function(dt) {
@@ -114,9 +118,12 @@ bugGenerator();
 
 var player = new Player(200,380);
 
-Player.prototype.checkCollisions = function() {
+function checkCollisions(allEnemies, player) {
     for(var i = 0; i <= allEnemies.length; i++) {
-        if (allEnemies[i].x === (player.x + 30) && allEnemies[i].y === (player.y = 30)){
+        if (allEnemies[i].x < player.x + player.width &&
+            allEnemies[i].x + allEnemies[i].width > player.x &&
+            allEnemies[i].y < player.y +  player.height &&
+            allEnemies[i].height + allEnemies[i].y > player.y){
             player.reset();
         };
     };
