@@ -120,7 +120,7 @@ console.log(allEnemies[0]);
 var player = new Player(200,380);
 
 function checkCollisions(allEnemies, player) {
-    for(var i = 0; i < 2; i++) {
+    for(var i = 0; i < 3; i++) {
         if (allEnemies[i].x < player.x + player.width &&
             allEnemies[i].x + allEnemies[i].width > player.x &&
             allEnemies[i].y < player.y +  player.height &&
