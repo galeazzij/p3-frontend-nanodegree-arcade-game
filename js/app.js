@@ -58,7 +58,7 @@ Player.prototype.handleInput = function(keys) {
     switch(keys){
 
         case 'left':
-        if(this.x>100){
+        if(this.x>90){
             this.x = this.x - 101;
             break;
         }else{
@@ -66,7 +66,7 @@ Player.prototype.handleInput = function(keys) {
         };
 
         case 'right':
-        if(this.x<405){
+        if(this.x<400){
             this.x = this.x + 101;
             break;
         } else{
