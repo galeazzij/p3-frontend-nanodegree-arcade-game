@@ -47,7 +47,7 @@ Player.prototype.update = function(dt) {
 };
 
 Player.prototype.reset = function() {
-    player = new Player();
+    player = new Player(200,380);
 };
 
 Player.prototype.render = function(x,y) {
