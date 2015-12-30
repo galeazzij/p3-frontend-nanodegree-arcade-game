@@ -22,7 +22,7 @@ Enemy.prototype.update = function(dt) {
     if(this.x >= 505) {
         allEnemies.splice();
         this.x = enemyXLocation();
-    };
+    }
 };
 
 // Draw the enemy on the screen, required method for game
@@ -58,39 +58,42 @@ Player.prototype.handleInput = function(keys) {
     switch(keys){
 
         case 'left':
-        if(this.x>90){
-            this.x = this.x - 101;
-            break;
-        }else{
-            break;
-        };
-
-        case 'right':
-        if(this.x<400){
-            this.x = this.x + 101;
-            break;
-        } else{
-            break;
-        };
-
-        case 'up':
-        if(this.y>0){
-            this.y = this.y - 83;
-            if(this.y<35){
-                player.reset();
+            if(this.x>90){
+                this.x = this.x - 101;
+                break;
+            }else{
+                break;
             }
             break;
-        }else{
+
+        case 'right':
+            if(this.x<400){
+                this.x = this.x + 101;
+                break;
+            } else{
+                break;
+            }
             break;
-        };
+
+        case 'up':
+            if(this.y>0){
+                this.y = this.y - 83;
+                if(this.y<35){
+                    player.reset();
+                }
+                break;
+            }else{
+                break;
+            }
+            break;
 
         case 'down':
-        if(this.y< 350){
-            this.y = this.y + 83;
-            break;
-        }else{
-            break;
-        };
+            if(this.y< 350){
+                this.y = this.y + 83;
+                break;
+            }else{
+                break;
+            }
 
     }
 
@@ -116,7 +119,7 @@ function bugGenerator() {
         var bug = new Enemy(enemyXLocation(), enemyRow[i]);
         allEnemies.push(bug);
     }
-};
+}
 bugGenerator();
 console.log(allEnemies[0]);
 
@@ -129,9 +132,9 @@ function checkCollisions(allEnemies, player) {
             allEnemies[i].y < player.y +  player.height &&
             allEnemies[i].height + allEnemies[i].y > player.y){
             player.reset();
-        };
-    };
-};
+        }
+    }
+}
 
 
 
