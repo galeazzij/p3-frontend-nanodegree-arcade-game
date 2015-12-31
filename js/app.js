@@ -59,7 +59,7 @@ Player.prototype.handleInput = function(keys) {
     switch(keys){
 
         case 'left':
-            if(this.x>90){
+            if(this.x > 90){
                 this.x = this.x - 101;
                 break;
             }else{
@@ -68,7 +68,7 @@ Player.prototype.handleInput = function(keys) {
             break;
 
         case 'right':
-            if(this.x<400){
+            if(this.x < 400){
                 this.x = this.x + 101;
                 break;
             } else{
@@ -77,10 +77,11 @@ Player.prototype.handleInput = function(keys) {
             break;
 
         case 'up':
-            if(this.y>0){
+            if(this.y > 0){
                 this.y = this.y - 83;
-                if(this.y<35){
-                    player.reset();
+                if(this.y < 35){
+                    this.x = 200;
+                    this.y = 380;
                 }
                 break;
             }else{
@@ -89,7 +90,7 @@ Player.prototype.handleInput = function(keys) {
             break;
 
         case 'down':
-            if(this.y< 350){
+            if(this.y < 350){
                 this.y = this.y + 83;
                 break;
             }else{
