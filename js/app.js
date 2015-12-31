@@ -14,12 +14,13 @@ var Enemy = function(x,y,width,height) {
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
+var boardRightBoundary = 505;
 Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x += (Math.floor((Math.random() * (200 -75)) + 75) * dt);
-    if(this.x >= 505) {
+    if(this.x >= boardRightBoundary) {
         allEnemies.splice();
         this.x = enemyXLocation();
     }
