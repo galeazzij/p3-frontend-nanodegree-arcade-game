@@ -47,7 +47,8 @@ Player.prototype.update = function(dt) {
 };
 
 Player.prototype.reset = function() {
-    player = new Player(200,380);
+    this.x = 200;
+    this.y = 380;
 };
 
 Player.prototype.render = function(x,y) {
